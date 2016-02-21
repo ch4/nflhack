@@ -94,9 +94,9 @@ angular.module('starter.controllers', [])
   })
   .controller('ResultCtrl', function($scope,$timeout) {
     $scope.$on('$ionicView.enter', function() {
-      //$timeout(function(){
-      //  window.history.back();
-      //}, 1000);
+      $timeout(function(){
+        window.history.back();
+      }, 1000);
     });
   })
 
