@@ -1,0 +1,45 @@
+<ion-view view-title="Game">
+  <ion-content>
+    <div class="row">
+      <div class="col"><img src="http://placehold.it/440x240"></div>
+    </div>
+
+    <div ng-show="isStartedGame">
+      <span><h2>What should the next play be?</h2></span>
+
+      <div class="row">
+        <div class="col">
+          <a class="button button-full button-positive" href="/#/app/success">Pass?</a>
+        </div>
+        <div class="col" style="vertical-align:middle;line-height:50px;">
+          <span>20%</span>
+        </div>
+      </div>
+
+      <div class="row">
+        <div class="col">
+          <a class="button button-full button-positive" href="/#/app/success">Pass?</a>
+          </div>
+          <div class="col" style="vertical-align:middle;line-height:50px;">
+          20%
+          </div>
+      </div>
+
+      <div class="row">
+        <div class="col">
+        <a class="button button-full button-positive" href="/#/app/success">Other?</a>
+        </div>
+        <div class="col" style="vertical-align:middle;line-height:50px;">
+          20%
+        </div>
+      </div>
+    </div>
+
+
+
+      <div class="row row-bottom" ng-show="!isStartedGame" style="vertical-align: middle;">
+        <button class="button button-full button-positive" ng-click="startGame()">Play</button>
+      </div>
+    </div>
+  </ion-content>
+</ion-view>
