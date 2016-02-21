@@ -102,7 +102,7 @@ angular.module('starter.controllers', [])
     $scope.$on('$ionicView.enter', function() {
       $timeout(function(){
         window.history.back();
-      }, 1000);
+      }, 2000);
     });
   })
 
