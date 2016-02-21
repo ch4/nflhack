@@ -43,7 +43,8 @@ angular.module('starter.controllers', [])
 
   .controller('MainCtrl', function($scope,$timeout) {
     $scope.$on('$ionicView.enter', function() {
-      //do stuff
+      console.log($scope.questionIterator)
+      $scope.nextQuestion();
     });
     $scope.isStartedGame = false;
     $scope.startGame = function(){
@@ -65,7 +66,12 @@ angular.module('starter.controllers', [])
       }
     ];
 
-    $scope.activeQuestion = $scope.questions[0];
+    $scope.questionIterator = 0;
+    $scope.activeQuestion = $scope.questions[$scope.questionIterator];
+    $scope.nextQuestion = function(){
+      $scope.questionIterator = ($scope.questionIterator + 1) % $scope.questions.length;
+      $scope.activeQuestion = $scope.questions[$scope.questionIterator];
+    };
 
     $scope.recentPlays = [
       {
