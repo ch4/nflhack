@@ -50,14 +50,53 @@ angular.module('starter.controllers', [])
       $scope.isStartedGame = true;
     }
 
+    $scope.questions = [
+      {
+        question : "What should the next play be?",
+        answer1 : { answer: "Pass", percentage : "12.5%"},
+        answer2 : { answer: "Run", percentage : "87.5%"},
+        answer3 : { answer: "Other", percentage : " "}
+      },
+      {
+        question : "Pass Play",
+        answer1 : { answer: "Incomplete", percentage : "14.3%"},
+        answer2 : { answer: "> 10 Yards", percentage : "28.6%"},
+        answer3 : { answer: "< 10 Yards", percentage : "57.1%"},
+      }
+    ];
+
+    $scope.activeQuestion = $scope.questions[0];
+
+    $scope.recentPlays = [
+      {
+        type : "Pass",
+        result : "Incomplete",
+        color : "red"
+      },
+      {
+        type : "Rush",
+        result : "No Gain",
+        color : "yellow"
+      },
+      {
+        type : "Pass",
+        result : "36 Yard Gain",
+        color : "green"
+      },
+      {
+        type : "Pass",
+        result : "7 Yards Gain",
+        color : "green"
+      }
+    ];
+
+
   })
   .controller('ResultCtrl', function($scope,$timeout) {
     $scope.$on('$ionicView.enter', function() {
-      //do your stuff after leaving
-      //console.log("entered resultCtrl");
-      $timeout(function(){
-        window.history.back();
-      }, 1000);
+      //$timeout(function(){
+      //  window.history.back();
+      //}, 1000);
     });
   })
 

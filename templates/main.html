@@ -1,36 +1,40 @@
 <ion-view view-title="Game">
   <ion-content>
-    <div class="row">
-      <div class="col"><img src="http://placehold.it/440x240"></div>
+    <h3 class="padding">Most Recent Plays</h3>
+    <div class="row" collection-repeat="item in recentPlays">
+        <ion-item class="item-borderless" style="width:100%">
+          <div style="width:49%;float:left;font-weight: bold;">{{item.type}}</div>
+          <div style="width:49%;float:right;color:{{item.color}};font-weight: bold;">{{item.result}}</div>
+        </ion-item>
     </div>
 
     <div ng-show="isStartedGame">
-      <span><h2>What should the next play be?</h2></span>
+      <h3 class="padding">{{activeQuestion.question}}</h3>
 
       <div class="row">
         <div class="col">
-          <a class="button button-full button-positive" href="/#/app/success">Pass?</a>
+          <a class="button button-full button-positive roundbutton" href="/#/app/success">{{activeQuestion.answer1.answer}}</a>
         </div>
         <div class="col" style="vertical-align:middle;line-height:50px;">
-          <span>20%</span>
+          <span>{{activeQuestion.answer1.percentage}}</span>
         </div>
       </div>
 
       <div class="row">
         <div class="col">
-          <a class="button button-full button-positive" href="/#/app/success">Pass?</a>
+          <a class="button button-full button-positive roundbutton" href="/#/app/success">{{activeQuestion.answer2.answer}}</a>
           </div>
           <div class="col" style="vertical-align:middle;line-height:50px;">
-          20%
+            {{activeQuestion.answer2.percentage}}
           </div>
       </div>
 
       <div class="row">
         <div class="col">
-        <a class="button button-full button-positive" href="/#/app/success">Other?</a>
+        <a class="button button-full button-positive roundbutton" href="/#/app/success">{{activeQuestion.answer3.answer}}</a>
         </div>
         <div class="col" style="vertical-align:middle;line-height:50px;">
-          20%
+          {{activeQuestion.answer3.percentage}}
         </div>
       </div>
     </div>
