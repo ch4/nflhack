@@ -1,4 +1,9 @@
 <ion-view view-title="Game">
+  <ion-nav-buttons side="right">
+    <button class="button" ng-click="openModal()">
+      Join Game
+    </button>
+  </ion-nav-buttons>
   <ion-content>
     <h3 class="padding">Most Recent Plays</h3>
     <div class="row" collection-repeat="item in recentPlays">
